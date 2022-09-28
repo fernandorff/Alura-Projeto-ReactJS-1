@@ -4,7 +4,7 @@ import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
 import { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
   const teams = [
     "Back-End",
     "Front-End",
@@ -15,14 +15,20 @@ const Form = () => {
     "Management",
   ];
 
-  const onSave = (e) => {
-    e.preventDefault();
-    console.log("Form submited => ", name, position, photo);
-  };
-
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [photo, setPhoto] = useState("");
+  const [team, setTeam] = useState("");
+
+  const onSave = (e) => {
+    e.preventDefault();
+    props.toRegisteredCollaborator({
+      name,
+      position,
+      photo,
+      team,
+    });
+  };
 
   return (
     <section className="formulary">
@@ -49,7 +55,13 @@ const Form = () => {
           value={photo}
           onUpdate={(value) => setPhoto(value)}
         />
-        <DropdownList label="Teams" itens={teams} />
+        <DropdownList
+          label="Teams"
+          itens={teams}
+          mandatory={true}
+          value={team}
+          onUpdate={(value) => setTeam(value)}
+        />
         <Button>Create Card</Button>
       </form>
     </section>

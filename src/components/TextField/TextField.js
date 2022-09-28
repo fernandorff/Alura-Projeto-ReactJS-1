@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./TextField.css";
 
 const TextField = (props) => {
-  const [value, setValue] = useState("");
-
   const onTyping = (e) => {
     props.onUpdate(e.target.value);
   };
