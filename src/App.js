@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Banner from "./components/Banner/Banner";
+import Footer from "./components/Footer/Footer";
 
 import Form from "./components/Form/Formulary";
 import Team from "./components/Team/Team";
@@ -46,7 +47,6 @@ function App() {
   const [collaborators, setCollaborators] = useState([]);
 
   const toNewAddedColaborator = (collaborator) => {
-    console.log(collaborator);
     setCollaborators([...collaborators, collaborator]);
   };
 
@@ -54,6 +54,7 @@ function App() {
     <div className="App">
       <Banner />
       <Form
+        teams={teams.map((team) => team.name)}
         toRegisteredCollaborator={(collaborator) =>
           toNewAddedColaborator(collaborator)
         }
@@ -64,8 +65,12 @@ function App() {
           name={team.name}
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
+          collaborators={collaborators.filter(
+            (collaborator) => collaborator.team === team.name
+          )}
         />
       ))}
+      <Footer />
     </div>
   );
 }

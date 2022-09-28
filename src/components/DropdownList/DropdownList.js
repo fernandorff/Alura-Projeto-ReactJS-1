@@ -9,6 +9,7 @@ const DropdownList = (props) => {
         required={props.mandatory}
         value={props.value}
       >
+        <option value=""></option>
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}

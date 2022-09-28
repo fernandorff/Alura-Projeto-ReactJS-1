@@ -5,16 +5,6 @@ import Button from "../Button/Button";
 import { useState } from "react";
 
 const Form = (props) => {
-  const teams = [
-    "Back-End",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX & Design",
-    "Mobile",
-    "Management",
-  ];
-
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [photo, setPhoto] = useState("");
@@ -28,6 +18,10 @@ const Form = (props) => {
       photo,
       team,
     });
+    setName("");
+    setPosition("");
+    setPhoto("");
+    setTeam("");
   };
 
   return (
@@ -56,8 +50,8 @@ const Form = (props) => {
           onUpdate={(value) => setPhoto(value)}
         />
         <DropdownList
-          label="Teams"
-          itens={teams}
+          label="Team"
+          itens={props.teams}
           mandatory={true}
           value={team}
           onUpdate={(value) => setTeam(value)}
