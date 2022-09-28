@@ -1,12 +1,12 @@
 import Banner from "./components/Banner/Banner";
 import TextField from "./components/TextField/TextField";
+import Form from "./components/Form/Formulary";
 
 function App() {
   return (
     <div className="App">
-      <h1>Banner</h1>
       <Banner />
-      <TextField label="Nome" />
+      <Form />
     </div>
   );
 }
