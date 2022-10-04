@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      
       <Form
         teams={teams.map((team) => team.name)}
         toRegisteredCollaborator={(collaborator) =>
