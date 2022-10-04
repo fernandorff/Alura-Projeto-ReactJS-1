@@ -26,7 +26,7 @@ const Footer = () => {
         <img src="/images/logo.png" alt="" />
       </section>
       <section>
-        <p>Desenvolvido por <a href="https://www.linkedin.com/in/fernandorff/">Fernando Rocha</a>.</p>
+        <p>Developed by <a href="https://www.linkedin.com/in/fernandorff/">Fernando Rocha</a>.</p>
       </section>
     </footer>
   );
